@@ -1,0 +1,60 @@
+run:
+  deadline: 90s
+  skip-dirs:
+    - proto/filterdb
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true 
+    check-blank: true
+  govet:
+    check-shadowing: true
+  golint:
+    min-confidence: 0.3
+  gofmt:
+    simplify: true
+  gocyclo:
+    min-complexity: 10
+  maligned:
+    suggest-new: true
+  dupl:
+    threshold: 100
+  goconst:
+    min-len: 3
+    min-occurrences: 3
+  misspell:
+    locale: US
+  unused:
+    check-exported: false
+  nakedret:
+    max-func-lines: 30
+
+linters:
+  enable:
+    - vet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+    - structcheck
+    - varcheck
+    - ineffassign
+    - deadcode
+    - typecheck
+    - golint
+    - gosec
+    - interfacer
+    - gofmt
+    - unconvert
+    - goconst
+    - gocyclo
+    - goimports
+    - maligned
+    - misspell
+    - nakedret
+    - megacheck
+    - govet
+  fast: false
+
+issues:
+  exclude-use-default: false
